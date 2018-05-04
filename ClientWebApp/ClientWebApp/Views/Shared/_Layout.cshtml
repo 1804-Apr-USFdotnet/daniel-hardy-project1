@@ -23,6 +23,12 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @using (Html.BeginForm())
+                    { 
+                        <input type="text" id="partial" name="partial" />
+                        <input type="submit" value="Search" formaction="~/Home/Search" formmethod="post"/>
+                    }
+
                 </ul>
             </div>
         </div>

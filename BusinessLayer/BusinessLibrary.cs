@@ -21,15 +21,25 @@ namespace BusinessLayer
         public void addResturant(Models.Resturant modelRes)
         {
             DataLayer.Resturant dataRes = ModelToData(modelRes);
-            data.addResturant(dataRes);
-            
+            //data.addResturant(dataRes);   
+        }
+
+        public void addReview(Models.Resturant modelRev)
+        {
+            DataLayer.Resturant dataRev = ModelToData(modelRev);
+            data.addResturant(dataRev);
         }
 
         public void deleteResturant(Models.Resturant modelRes)
         {
             DataLayer.Resturant dataRes = ModelToData(modelRes);
             data.deleteResturant(dataRes);
+        }
 
+        public void deleteReview(Models.Resturant modelRes)
+        {
+            DataLayer.Resturant dataRes = ModelToData(modelRes);
+            data.deleteResturant(dataRes);
         }
 
         public void updateResturant(Models.Resturant modelRes)
@@ -37,6 +47,13 @@ namespace BusinessLayer
             DataLayer.Resturant dataRes = ModelToData(modelRes);
             data.updateResturant(dataRes);
         }
+
+        public void updateReview(Models.Review modelRev)
+        {
+            DataLayer.Review dataRev = ModelToData(modelRev);
+            data.updateReview(dataRev);
+        }
+
         public List<Models.Resturant> getAllResturants()
         {
             List<DataLayer.Resturant> res = data.GetResturants().ToList();
@@ -83,6 +100,15 @@ namespace BusinessLayer
             return results;
         }
 
+        public Models.Review GetReviewbyID(int id)
+        {
+            List<DataLayer.Review> tmp = data.GetReviews().ToList();
+            DataLayer.Review rev = tmp.Where(x => x.rv_id == id).FirstOrDefault();
+            return DataToModel(rev);
+        }
+
+        // Mapping Methods
+
         public static DataLayer.Resturant ModelToData(Models.Resturant model)
         {
             DataLayer.Resturant r = new DataLayer.Resturant();
@@ -96,6 +122,7 @@ namespace BusinessLayer
             {
                 var tmp = new DataLayer.Review
                 {
+                    rv_id = rev.rv_id,
                     Author = rev.Author,
                     Rating = rev.Rating,
                     Comment = rev.Comment
@@ -120,6 +147,7 @@ namespace BusinessLayer
             {
                 var tmp = new Models.Review
                 {
+                    rv_id = rev.rv_id,
                     Author = rev.Author,
                     Rating = rev.Rating,
                     Comment = rev.Comment
@@ -127,6 +155,28 @@ namespace BusinessLayer
                 r.Reviews.Add(tmp);
             }
 
+            return r;
+        }
+
+        public static DataLayer.Review ModelToData(Models.Review model)
+        {
+            DataLayer.Review r = new DataLayer.Review();
+            r.rv_id = model.rv_id;
+            r.rs_id = model.rs_id;
+            r.Author = model.Author;
+            r.Rating = model.Rating;
+            r.Comment = model.Comment;
+            return r;
+        }
+
+        public static Models.Review DataToModel(DataLayer.Review model)
+        {
+            Models.Review r = new Models.Review();
+            r.rv_id = model.rv_id;
+            r.rs_id = model.rs_id;
+            r.Author = model.Author;
+            r.Rating = model.Rating;
+            r.Comment = model.Comment;
             return r;
         }
     }

@@ -1,18 +1,17 @@
 ﻿@model IEnumerable<Models.Resturant>
 
 @{
-    ViewBag.Title = "GetAll";
+    ViewBag.Title = "Search";
 }
 
-<h2>Resturants</h2>
+<h2>Search</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Add")
+    @Html.ActionLink("Don't See? Add it", "Add")
 </p>
 <table class="table">
     <tr>
         <th>
-           
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -53,9 +52,9 @@
             @Html.DisplayFor(modelItem => item.FoodType)
         </td>
         <td>
-            @Html.ActionLink("Update", "Update", new {  id=item.rs_id }) |
+            @Html.ActionLink("Edit", "Update", new {  id = item.rs_id}) |
             @Html.ActionLink("Details", "Details", new { id = item.rs_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.rs_id })
+            @Html.ActionLink("Delete", "Delete", new { id = item.rs_id  })
         </td>
     </tr>
 }

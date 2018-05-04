@@ -20,9 +20,6 @@
           <Key>
             <PropertyRef Name="rv_id" />
             <PropertyRef Name="rs_id" />
-            <PropertyRef Name="Author" />
-            <PropertyRef Name="Rating" />
-            <PropertyRef Name="Comment" />
           </Key>
           <Property Name="rv_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="rs_id" Type="int" Nullable="false" />
@@ -71,9 +68,6 @@
         <EntityType Name="Review">
           <Key>
             <PropertyRef Name="rs_id" />
-            <PropertyRef Name="Author" />
-            <PropertyRef Name="Rating" />
-            <PropertyRef Name="Comment" />
             <PropertyRef Name="rv_id" />
           </Key>
           <Property Name="rs_id" Type="Int32" Nullable="false" />

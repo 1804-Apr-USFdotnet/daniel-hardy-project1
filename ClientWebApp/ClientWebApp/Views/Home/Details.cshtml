@@ -11,11 +11,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.rs_id)
+          
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.rs_id)
+            @Html.HiddenFor(model => model.rs_id)
         </dd>
 
         <dt>
@@ -75,6 +75,7 @@
                 <td>@rev.Author</td>
                 <td>@rev.Rating</td>
                 <td>@rev.Comment</td>
+                <td>@Html.ActionLink("Edit","Edit",new { id = rev.rv_id })</td>
             </tr>
         }
     </table>

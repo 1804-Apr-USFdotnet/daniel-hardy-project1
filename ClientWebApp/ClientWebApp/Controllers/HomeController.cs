@@ -52,7 +52,42 @@ namespace ClientWebApp.Controllers
 
             return View(bl.GetResturantByID(id));
         }
+        public ActionResult Edit(int id)
+        {
+            return View(bl.GetReviewbyID(id));
+        }
 
+        [HttpPost]
+        public ActionResult Edit(Models.Review rev)
+        {
+            try
+            {
+                bl.updateReview(rev);
+                Response.Redirect("~/Home/Details/" + rev.rs_id);
+            }
+
+            catch (Exception ex)
+            {
+                logger.LogException(NLog.LogLevel.Error, "Controller: Function: Edit: " + ex.Message, ex);
+                return View();
+            }
+            return View();
+        }
+        
+
+        public ActionResult AddReview(int id)
+        {
+
+            return View();
+        }
+
+
+
+        [HttpPost]
+        public ActionResult Search(string partial)
+        {
+            return View(bl.SearchRestutants(partial));
+        }
         public ActionResult Update(int id)
         {  
             return View(bl.GetResturantByID(id));
