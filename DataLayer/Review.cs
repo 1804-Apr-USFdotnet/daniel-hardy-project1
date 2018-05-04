@@ -18,6 +18,7 @@ namespace DataLayer
         public string Author { get; set; }
         public int Rating { get; set; }
         public string Comment { get; set; }
+        public int rv_id { get; set; }
     
         public virtual Resturant Resturant { get; set; }
     }

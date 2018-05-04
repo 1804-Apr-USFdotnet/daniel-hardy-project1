@@ -62,5 +62,20 @@
 </div>
 <p>
     @Html.ActionLink("Update", "Update", new {  id = Model.rs_id  }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "GetAll")
+
+    <table style="width:100%">
+        <thead>Reviews</thead>
+        <th>Author</th>
+        <th>Rating</th>
+        <th>Comment</th>
+        @foreach (var rev in Model.Reviews)
+        {
+            <tr>
+                <td>@rev.Author</td>
+                <td>@rev.Rating</td>
+                <td>@rev.Comment</td>
+            </tr>
+        }
+    </table>
 </p>

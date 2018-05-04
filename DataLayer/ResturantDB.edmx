@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ResturantDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ResturantDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Resturant">
           <Key>
             <PropertyRef Name="rs_id" />
@@ -18,11 +18,13 @@
         </EntityType>
         <EntityType Name="Review">
           <Key>
+            <PropertyRef Name="rv_id" />
             <PropertyRef Name="rs_id" />
             <PropertyRef Name="Author" />
             <PropertyRef Name="Rating" />
             <PropertyRef Name="Comment" />
           </Key>
+          <Property Name="rv_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="rs_id" Type="int" Nullable="false" />
           <Property Name="Author" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Rating" Type="int" Nullable="false" />
@@ -50,8 +52,7 @@
             <End Role="Review" EntitySet="Review" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ResturantDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -73,12 +74,14 @@
             <PropertyRef Name="Author" />
             <PropertyRef Name="Rating" />
             <PropertyRef Name="Comment" />
+            <PropertyRef Name="rv_id" />
           </Key>
           <Property Name="rs_id" Type="Int32" Nullable="false" />
           <Property Name="Author" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Rating" Type="Int32" Nullable="false" />
           <Property Name="Comment" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Resturant" Relationship="Self.FK_Cascade" FromRole="Review" ToRole="Resturant" />
+          <Property Name="rv_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <Association Name="FK_Cascade">
           <End Role="Resturant" Type="Self.Resturant" Multiplicity="1">
@@ -123,6 +126,7 @@
           <EntitySetMapping Name="Reviews">
             <EntityTypeMapping TypeName="ResturantDBModel.Review">
               <MappingFragment StoreEntitySet="Review">
+                <ScalarProperty Name="rv_id" ColumnName="rv_id" />
                 <ScalarProperty Name="rs_id" ColumnName="rs_id" />
                 <ScalarProperty Name="Author" ColumnName="Author" />
                 <ScalarProperty Name="Rating" ColumnName="Rating" />

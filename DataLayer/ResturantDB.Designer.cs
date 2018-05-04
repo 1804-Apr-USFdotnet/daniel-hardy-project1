@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\revature\hardy-daniel-project0\Project0withDAL\DataLayer\ResturantDB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\revature\daniel-hardy-project1\DataLayer\ResturantDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
