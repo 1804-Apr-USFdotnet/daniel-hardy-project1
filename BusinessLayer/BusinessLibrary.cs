@@ -29,6 +29,7 @@ namespace BusinessLayer
         {
             DataLayer.Resturant dataRes = ModelToData(modelRes);
             data.deleteResturant(dataRes);
+
         }
 
         public void updateResturant(Models.Resturant modelRes)

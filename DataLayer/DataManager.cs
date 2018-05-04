@@ -59,6 +59,7 @@ namespace DataLayer
         {
             using (var dbcontext = new ResturantDBEntities())
             {
+                dbcontext.Resturants.Attach(model);
                 dbcontext.Resturants.Remove(model);
                 dbcontext.SaveChanges();
             }

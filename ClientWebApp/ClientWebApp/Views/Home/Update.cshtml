@@ -9,7 +9,6 @@
 
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
         <h4>Resturant</h4>
@@ -72,7 +71,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "GetAll")
 </div>
 
 @section Scripts {

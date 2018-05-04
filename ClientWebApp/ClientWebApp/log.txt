@@ -1,0 +1,2 @@
+18:57:56 - Error - Delete raised exception
+19:00:01 - Error - The object cannot be deleted because it was not found in the ObjectStateManager.
