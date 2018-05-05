@@ -75,9 +75,18 @@ namespace ClientWebApp.Controllers
         }
         
 
-        public ActionResult AddReview(int id)
+        public ActionResult AddReview(Models.Review review)
         {
-
+            try
+            {
+                bl.addReview(review);
+                Response.Redirect("~/Home/Details/" + review.rs_id);
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(NLog.LogLevel.Error, "Controller: Function: AddReview: " + ex.Message, ex);
+                return View();
+            }
             return View();
         }
 
@@ -113,6 +122,11 @@ namespace ClientWebApp.Controllers
             return View(bl.GetResturantByID(id));
         }
 
+        public ActionResult DeleteReview(int id)
+        {
+            return View(bl.GetReviewbyID(id));
+        }
+
         [HttpPost]
         public ActionResult Delete(Models.Resturant resturant)
         {
@@ -129,6 +143,25 @@ namespace ClientWebApp.Controllers
             }
             return View();
            
+        }
+
+        [HttpPost]
+        public ActionResult DeleteReview(Models.Review review)
+        {
+            ViewBag.id = review.rs_id;
+            try
+            {
+                bl.deleteReview(review);
+                Response.Redirect("~/Home/Details/" + review.rs_id);
+            }
+            catch (Exception ex)
+            {
+                //NLog goes here
+                logger.LogException(NLog.LogLevel.Error, "Controller: Function: DeleteReview: " + ex.Message, ex);
+                return View();
+            }
+            return View();
+
         }
 
         public ActionResult GetAll()

@@ -21,13 +21,13 @@ namespace BusinessLayer
         public void addResturant(Models.Resturant modelRes)
         {
             DataLayer.Resturant dataRes = ModelToData(modelRes);
-            //data.addResturant(dataRes);   
+            data.addResturant(dataRes);   
         }
 
-        public void addReview(Models.Resturant modelRev)
+        public void addReview(Models.Review modelRev)
         {
-            DataLayer.Resturant dataRev = ModelToData(modelRev);
-            data.addResturant(dataRev);
+            DataLayer.Review dataRev = ModelToData(modelRev);
+            data.addReview(dataRev);
         }
 
         public void deleteResturant(Models.Resturant modelRes)
@@ -36,10 +36,10 @@ namespace BusinessLayer
             data.deleteResturant(dataRes);
         }
 
-        public void deleteReview(Models.Resturant modelRes)
+        public void deleteReview(Models.Review modelRev)
         {
-            DataLayer.Resturant dataRes = ModelToData(modelRes);
-            data.deleteResturant(dataRes);
+            DataLayer.Review dataRev = ModelToData(modelRev);
+            data.deleteReview(dataRev);
         }
 
         public void updateResturant(Models.Resturant modelRes)

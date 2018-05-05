@@ -63,7 +63,7 @@ ALTER TABLE Resturant.Review
 
 ALTER TABLE Resturant.Review
    ADD CONSTRAINT PK_Review
-   Primary KEY (rv_id,rs_id,author,rating,comment)
+   Primary KEY (rv_id,rs_id)
 
 insert into Resturant.Review values(1,'Amy',4,'Good food, but a little greasy. Fast service!')
 insert into Resturant.Review values(1,'Jan',1,'Was cold, and over cooked. I didn''t know that was possible!')
@@ -92,3 +92,10 @@ set [Name] = 'Chili''s'
 where rs_id = 1
 
 select * from Resturant.Resturant;
+select * from Resturant.Review;
+
+ALTER TABLE Resturant.Review
+   Drop CONSTRAINT PK_Review
+Go
+
+Select * from Resturant.Review
