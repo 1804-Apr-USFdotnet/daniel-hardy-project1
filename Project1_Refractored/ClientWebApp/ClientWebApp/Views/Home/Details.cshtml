@@ -84,9 +84,9 @@
     {
         <h4>Enter a Review</h4>
         <input type="hidden" id="rs_id" name="rs_id" value="@Model.rs_id"/>
-        <input type="text" id="Author" name="Author" placeholder="Name" />
-        <input type="text" id="Rating" name="Rating" placeholder="Rating" />
-        <textarea id="Comment" name="Comment" placeholder="Comment on your experience"></textarea>
+        <input type="text" id="Author" name="Author" placeholder="Name"  required/>
+        <input type="text" id="Rating" name="Rating" placeholder="Rating" required/>
+        <textarea id="Comment" name="Comment" placeholder="Comment on your experience" required></textarea>
         <input type="submit" value="Submit" formaction="~/Home/AddReview" formmethod="post" />
     }
 </p>
