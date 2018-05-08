@@ -11,7 +11,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-
+          
         </dt>
 
         <dd>
@@ -61,34 +61,23 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Update", "Update", new { id = Model.rs_id }) |
+    @Html.ActionLink("Update", "Update", new {  id = Model.rs_id  }) |
     @Html.ActionLink("Back to List", "GetAll")
 
-    <table style="width:85%">
+    <table style="width:100%">
         <thead>Reviews</thead>
         <th>Author</th>
         <th>Rating</th>
         <th>Comment</th>
         @foreach (var rev in Model.Reviews)
         {
-        <tr>
-            <td>@rev.Author</td>
-            <td>@rev.Rating</td>
-            <td>@rev.Comment</td>
-            <td>@Html.ActionLink("Edit", "Edit", new { id = rev.rv_id })</td>
-            <td>@Html.ActionLink("Delete", "DeleteReview", new { id = rev.rv_id })</td>
-        </tr>
+            <tr>
+                <td>@rev.Author</td>
+                <td>@rev.Rating</td>
+                <td>@rev.Comment</td>
+                <td>@Html.ActionLink("Edit","Edit",new { id = rev.rv_id })</td>
+            </tr>
         }
     </table>
-    @using (Html.BeginForm())
-    {
-        <h4>Enter a Review</h4>
-        <input type="hidden" id="rs_id" name="rs_id" value="@Model.rs_id"/>
-        <input type="text" id="Author" name="Author" placeholder="Name" />
-        <input type="text" id="Rating" name="Rating" placeholder="Rating" />
-        <textarea id="Comment" name="Comment" placeholder="Comment on your experience"></textarea>
-        <input type="submit" value="Submit" formaction="~/Home/AddReview" formmethod="post" />
-    }
+
 </p>
-
-

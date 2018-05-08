@@ -90,7 +90,14 @@ namespace ClientWebApp.Controllers
             return View();
         }
 
-
+        public ActionResult Name()
+        {
+            return View(bl.getResturantsbyName());
+        }
+        public ActionResult State()
+        {
+            return View(bl.getResturantsbyState());
+        }
 
         [HttpPost]
         public ActionResult Search(string partial)
@@ -117,8 +124,6 @@ namespace ClientWebApp.Controllers
             }
             return View();
         }
-
-        
         public ActionResult Delete(int id)
         {
             return View(bl.GetResturantByID(id));
