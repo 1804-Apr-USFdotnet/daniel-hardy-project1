@@ -57,8 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataManager.cs" />
+    <Compile Include="FakeResturantsDBEntities.cs" />
     <Compile Include="IResturantRepository.cs" />
     <Compile Include="IReviewRespository.cs" />
+    <Compile Include="TestDbSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resturant.cs">
       <DependentUpon>ResturantDB.tt</DependentUpon>

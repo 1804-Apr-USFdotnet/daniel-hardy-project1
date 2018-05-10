@@ -18,40 +18,41 @@ namespace BusinessLayer
             data = new DataLayer.DataManager();
         }
 
+        
         public void addResturant(Models.Resturant modelRes)
         {
             DataLayer.Resturant dataRes = ModelToData(modelRes);
-            data.addResturant(dataRes);   
+            data.Add(dataRes);   
         }
 
         public void addReview(Models.Review modelRev)
         {
             DataLayer.Review dataRev = ModelToData(modelRev);
-            data.addReview(dataRev);
+            data.Add(dataRev);
         }
 
         public void deleteResturant(Models.Resturant modelRes)
         {
             DataLayer.Resturant dataRes = ModelToData(modelRes);
-            data.deleteResturant(dataRes);
+            data.Delete(dataRes);
         }
 
         public void deleteReview(Models.Review modelRev)
         {
             DataLayer.Review dataRev = ModelToData(modelRev);
-            data.deleteReview(dataRev);
+            data.Delete(dataRev);
         }
 
         public void updateResturant(Models.Resturant modelRes)
         {
             DataLayer.Resturant dataRes = ModelToData(modelRes);
-            data.updateResturant(dataRes);
+            data.Update(dataRes);
         }
 
         public void updateReview(Models.Review modelRev)
         {
             DataLayer.Review dataRev = ModelToData(modelRev);
-            data.updateReview(dataRev);
+            data.Update(dataRev);
         }
 
         public List<Models.Resturant> getAllResturants()

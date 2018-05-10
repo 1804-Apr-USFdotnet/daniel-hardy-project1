@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,7 @@ namespace DataLayer
             return reviewEntities.ToList();
         }
 
-        public void addResturant(Resturant model)
+        public void Add(Resturant model)
         {
             using (var dbcontext = new ResturantDBEntities())
             {
@@ -47,7 +48,7 @@ namespace DataLayer
                 dbcontext.SaveChanges();
             }
         }
-        public void addReview(Review model)
+        public void Add(Review model)
         {
             using (var dbcontext = new ResturantDBEntities())
             {
@@ -56,7 +57,7 @@ namespace DataLayer
             }
         }
 
-        public void updateResturant(Resturant model)
+        public void Update(Resturant model)
         {
             using (var dbcontext = new ResturantDBEntities())
             {
@@ -75,7 +76,7 @@ namespace DataLayer
                 dbcontext.SaveChanges();
             }
         }
-        public void updateReview(Review model)
+        public void Update(Review model)
         {
             using (var dbcontext = new ResturantDBEntities())
             {
@@ -92,7 +93,7 @@ namespace DataLayer
             }
         }
 
-        public void deleteResturant(Resturant model)
+        public void Delete(Resturant model)
         {
             using (var dbcontext = new ResturantDBEntities())
             {
@@ -101,7 +102,7 @@ namespace DataLayer
                 dbcontext.SaveChanges();
             }
         }
-        public void deleteReview(Review model)
+        public void Delete(Review model)
         {
             using (var dbcontext = new ResturantDBEntities())
             {
@@ -111,12 +112,10 @@ namespace DataLayer
             }
         }
 
-	public override String ToString()
-	{
-		return "Farts";
-	}
-        
-
+        public override String ToString()
+        {
+            return "Farts";
+        }
     }
 }
 

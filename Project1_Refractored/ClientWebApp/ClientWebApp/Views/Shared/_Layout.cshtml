@@ -23,11 +23,10 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Top Resturants", "getTop", "Home")</li>
                     <li>@Html.ActionLink("View All", "GetAll", "Home")</li>
-                    @using (Html.BeginForm())
-                    { 
-                        <input type="text" id="partial" name="partial" />
-                        <input type="submit" value="Search" formaction="~/Home/Search" formmethod="post"/>
-                    }
+                    <form class="navbar-header" style="padding-top: 15px">
+                    <input type="text" id="partial" name="partial" />
+                    <input type="submit" value="Search" formaction="~/Home/Search" formmethod="post" />
+                    </form>
 
                 </ul>
             </div>

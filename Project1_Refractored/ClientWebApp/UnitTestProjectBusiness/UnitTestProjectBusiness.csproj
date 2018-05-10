@@ -67,10 +67,17 @@
       <Project>{28c1b35d-5ba3-41b8-bbb2-a3de1216a2a0}</Project>
       <Name>BusinessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\DataLayer\DataLayer.csproj">
+      <Project>{26907a2f-5fae-440c-81fd-4d36eac1dae8}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClientWebApp\ClientWebApp.csproj">
       <Project>{0a09d835-8bb9-4dda-abba-206e8eb385b0}</Project>
       <Name>ClientWebApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SerialModels\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

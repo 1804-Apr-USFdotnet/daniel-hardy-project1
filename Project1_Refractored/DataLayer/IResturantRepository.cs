@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    public interface IResturantRepository : IDisposable
+    public interface IResturantRepository
     {
-        IEnumerable<DataLayer.Resturant> GetResturants();
-        DataLayer.Resturant GetResturantID(int id);
-        void AddResturant(DataLayer.Resturant resturant);
-        void DeleteResturant(DataLayer.Resturant resturant);
-        void UpdateResturant(DataLayer.Resturant resturant);
-        void SaveChanges();
+        void Add(Resturant resturant);
+        void Delete(Resturant resturant);
+        void Update(Resturant resturant);
+   
     }
 }

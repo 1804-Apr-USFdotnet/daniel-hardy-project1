@@ -12,19 +12,19 @@ namespace DataLayer
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class ResturantDBEntities : DbContext
     {
         public ResturantDBEntities()
             : base("name=ResturantDBEntities")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
         public virtual DbSet<Resturant> Resturants { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
     }
